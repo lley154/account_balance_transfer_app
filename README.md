@@ -44,9 +44,29 @@ peer chaincode invoke \
     --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt \
     -c '{"function":"initAccount","Args":["A1","100"]}'
 ```
+List the initial balance
+```
+peer chaincode query \
+    -C mychannel \
+    -n balance_transfer \
+    -c '{"function":"listAccounts", "Args":[]}'
+```
 
 Repeat same invoke command with -c '{"function":"setBalance","Args":["A1","150"]}'
-
+```
+peer chaincode invoke \
+    -o localhost:7050 \
+    --ordererTLSHostnameOverride orderer.example.com \
+    --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem \
+    -C mychannel \
+    -n balance_transfer \
+    --peerAddresses localhost:7051 \
+    --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
+    --peerAddresses localhost:9051 \
+    --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt \
+    -c '{"function":"setBalance","Args":["A1","150"]}'
+```
+Now, list the new balance
 ```
 peer chaincode query \
     -C mychannel \
@@ -57,7 +77,45 @@ Change user to User1:
 ```
 export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp
 
-invoke '{"function":"initAccount","Args":["U1","100"]}'
-invoke '{"function":"setBalance","Args":["U1","250"]}'
-invoke '{"function":"transfer","Args":["U1","A1", "100"]}'
+peer chaincode invoke \
+    -o localhost:7050 \
+    --ordererTLSHostnameOverride orderer.example.com \
+    --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem \
+    -C mychannel \
+    -n balance_transfer \
+    --peerAddresses localhost:7051 \
+    --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
+    --peerAddresses localhost:9051 \
+    --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt \
+    -c '{"function":"initAccount","Args":["U1","150"]}'
+
+
+peer chaincode invoke \
+    -o localhost:7050 \
+    --ordererTLSHostnameOverride orderer.example.com \
+    --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem \
+    -C mychannel \
+    -n balance_transfer \
+    --peerAddresses localhost:7051 \
+    --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt \
+    --peerAddresses localhost:9051 \
+    --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt \
+    -c   '{"function":"transfer","Args":["U1","A1", "100"]}'
 ```
+List the final balance of U1
+```
+peer chaincode query \
+    -C mychannel \
+    -n balance_transfer \
+    -c '{"function":"listAccounts", "Args":[]}'
+```
+And then the final balance of A1
+```
+export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+
+peer chaincode query \
+    -C mychannel \
+    -n balance_transfer \
+    -c '{"function":"listAccounts", "Args":[]}'
+```
+
