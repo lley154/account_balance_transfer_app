@@ -119,3 +119,50 @@ peer chaincode query \
     -c '{"function":"listAccounts", "Args":[]}'
 ```
 
+## Part 2: Using Fabric Application Gateway, Wallets to interact with Chaincode
+
+Go into the account balance transfer app directory
+```
+cd ../account_balance_transfer_app/balance_transfer_app
+```
+First you have to enroll the admin user
+```
+npm install
+node enrollUser.js 'CAAdmin@org1.example.com' admin adminpw
+```
+
+Then register user as follows
+```
+node registerUser.js 'CAAdmin@org1.example.com' 'User1@org1.example.com' '{"secret": "userpw"}'
+node enrollUser.js 'User1@org1.example.com' 'User1@org1.example.com' userpw
+```
+Using User1 credentials create account acc1
+```
+node submitTransaction.js 'User1@org1.example.com' initAccount acc1 100
+```
+
+To check the balance
+```
+node submitTransaction.js 'User1@org1.example.com' listAccounts
+```
+Register and enroll User2
+```
+node registerUser.js 'CAAdmin@org1.example.com' 'User2@org1.example.com' '{"secret": "userpw2"}'
+
+node enrollUser.js 'User2@org1.example.com' 'User2@org1.example.com' userpw2
+```
+Using User 2 create acc2
+```
+node submitTransaction.js 'User2@org1.example.com' initAccount acc2 200
+node submitTransaction.js 'User2@org1.example.com' listAccounts
+```
+Now transfer 50 from acc2 to acc1
+```
+node submitTransaction.js 'User2@org1.example.com' transfer acc2 acc1 50
+node submitTransaction.js 'User2@org1.example.com' listAccounts
+node submitTransaction.js 'User1@org1.example.com' listAccounts
+```
+
+
+
+
