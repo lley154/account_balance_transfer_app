@@ -163,7 +163,25 @@ node submitTransaction.js 'User2@org1.example.com' transfer acc2 acc1 50
 node submitTransaction.js 'User2@org1.example.com' listAccounts
 node submitTransaction.js 'User1@org1.example.com' listAccounts
 ```
+Look and confirm there are 3 wallets created and have the certificate and private key for each.
+```
+ls -l wallet
+total 12
+-rw-rw-r-- 1 ubuntu ubuntu 1139 Feb 10 21:25 CAAdmin@org1.example.com.id
+-rw-rw-r-- 1 ubuntu ubuntu 1159 Feb 10 21:26 User1@org1.example.com.id
+-rw-rw-r-- 1 ubuntu ubuntu 1159 Feb 10 21:30 User2@org1.example.com.id
 
+cat wallet/User1@org1.example.com.id | jq
+{
+  "credentials": {
+    "certificate": "-----BEGIN CERTIFICATE-----\nMIICHTCCAcSgAwIBAgIUZ5brwciSh1l1DFM65ynf0KOgiMYwCgYIKoZIzj0EAwIw\ncDELMAkGA1UEBhMCVVMxFzAVBgNVBAgTDk5vcnRoIENhcm9saW5hMQ8wDQYDVQQH\nEwZEdXJoYW0xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh\nLm9yZzEuZXhhbXBsZS5jb20wHhcNMjQwMjEwMjA1MTAwWhcNMjUwMjA5MjEyNzAw\nWjAyMQ8wDQYDVQQLEwZjbGllbnQxHzAdBgNVBAMMFlVzZXIxQG9yZzEuZXhhbXBs\nZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARF+IznR6K0k4q7YvT/xRdP\nAZLSV2n9dgu2+wU2ICPWSIrDaJye5ftj11fNk44T+t41v8d0HjXRhnud2Nmwg8PU\no3oweDAOBgNVHQ8BAf8EBAMCB4AwDAYDVR0TAQH/BAIwADAdBgNVHQ4EFgQUTu8K\nARFWVKFvRF7MXjuxi5WOnRcwHwYDVR0jBBgwFoAUVnLbCgv2Rj5ZiV+uhgCd6ttH\na5MwGAYIKgMEBQYHCAEEDHsiYXR0cnMiOnt9fTAKBggqhkjOPQQDAgNHADBEAiAN\nPjnDeBziTuUNE8n9uvsyCKsZeaikLTcg9f4X2h+sJAIgPJwZzZ4IaNiqOrjAIue3\nNeLp2ZP8PTfPcR9LmYtAVE4=\n-----END CERTIFICATE-----\n",
+    "privateKey": "-----BEGIN PRIVATE KEY-----\r\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgL6QmkRWcMjOhRYtP\r\nXD6lsQRRn8BoD79IANF5895L8dGhRANCAARF+IznR6K0k4q7YvT/xRdPAZLSV2n9\r\ndgu2+wU2ICPWSIrDaJye5ftj11fNk44T+t41v8d0HjXRhnud2Nmwg8PU\r\n-----END PRIVATE KEY-----\r\n"
+  },
+  "mspId": "Org1MSP",
+  "type": "X.509",
+  "version": 1
+}
+```
 
 
 
