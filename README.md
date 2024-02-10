@@ -1,4 +1,9 @@
 # Simple Account Transfer Application in Hyperledger Fabric
+Note: You must complete Lab #1 first which will include the required binary files. 
+```
+cd fabric-samples
+git clone https://github.com/lley154/account_balance_transfer_app.git
+```
 
 ## Part 1: Using peer command to interact with Chaincode
 
@@ -6,7 +11,7 @@
 cd fabric-samples/test-network
 ./network.sh down 
 ./network.sh up createChannel -ca -s couchdb
-./network.sh deployCC -ccn balance_transfer -ccv 1.0 -ccp ../../account_balance_transfer_app/balance_transfer -ccl javascript
+./network.sh deployCC -ccn balance_transfer -ccv 1.0 -ccp ../account_balance_transfer_app/balance_transfer -ccl javascript
 ```
 
 Set environment variables:
@@ -18,6 +23,11 @@ export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1.examp
 export CORE_PEER_ADDRESS=localhost:7051
 export PATH=${PWD}/../bin:$PATH
 export FABRIC_CFG_PATH=$PWD/../config/
+```
+Test to see if you see the mychannel and installed chaincode
+```
+peer channel list
+peer lifecycle chaincode queryinstalled
 ```
 
 Invoke Command:
