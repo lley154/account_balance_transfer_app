@@ -2,6 +2,7 @@
 Note: You must complete Lab #1 first which will include the required binary files. 
 ```
 cd fabric-samples
+sudo apt install jq
 git clone https://github.com/lley154/account_balance_transfer_app.git
 ```
 
