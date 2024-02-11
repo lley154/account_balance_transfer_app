@@ -129,10 +129,10 @@ peer chaincode query \
 Go into the account balance transfer app directory
 ```
 cd ../account_balance_transfer_app/balance_transfer_app
+npm install
 ```
 First you have to enroll the admin user
 ```
-npm install
 node enrollUser.js 'CAAdmin@org1.example.com' admin adminpw
 ```
 
