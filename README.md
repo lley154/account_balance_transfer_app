@@ -78,7 +78,8 @@ peer chaincode query \
 Change user to User1:
 ```
 export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp
-
+```
+```
 peer chaincode invoke \
     -o localhost:7050 \
     --ordererTLSHostnameOverride orderer.example.com \
@@ -90,8 +91,8 @@ peer chaincode invoke \
     --peerAddresses localhost:9051 \
     --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt \
     -c '{"function":"initAccount","Args":["U1","150"]}'
-
-
+```
+```
 peer chaincode invoke \
     -o localhost:7050 \
     --ordererTLSHostnameOverride orderer.example.com \
