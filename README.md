@@ -190,6 +190,28 @@ cat wallet/User1@org1.example.com.id | jq
   "version": 1
 }
 ```
+## Part 3: Viewing World State Data in CouchDB
+
+We can port forward from our local machine to the virutal machine and then access the CouchDB UI.
+
+ssh usage:
+```
+ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname
+```
+An example on how to connect is
+```
+ssh -i lab2.pem -L 5984:ec2-54-91-100-220.compute-1.amazonaws.com:5984 ubuntu@ec2-54-91-100-220.compute-1.amazonaws.com
+```
+Now, we can access the CouchDB UI locally by using the browser and go to:
+```
+http://localhost:5984/_utils/#login
+username: admin
+password: adminpw
+```
+Go to mychannel_balance_transfer
+
+Select Account A1 to see the current state of A1
+
 
 
 
