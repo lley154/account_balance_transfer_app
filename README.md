@@ -1,5 +1,5 @@
 # Simple Account Transfer Application in Hyperledger Fabric
-Note: You must complete Lab #1 first which will include the required binary files. 
+Note: You must complete Lab #1 and Lab #2 first which will include the required binary files. 
 ```
 sudo reboot ## restart your vm to free up resources
 sudo apt install jq
