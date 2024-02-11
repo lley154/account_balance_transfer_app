@@ -39,7 +39,7 @@ peer channel list
 peer lifecycle chaincode queryinstalled
 ```
 
-Invoke Command:
+Invoke chaincode:
 ```
 peer chaincode invoke \
     -o localhost:7050 \
