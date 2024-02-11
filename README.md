@@ -10,7 +10,7 @@ git clone https://github.com/lley154/account_balance_transfer_app.git
 ## Part 1: Using peer command to interact with Chaincode
 Set environment variables:
 ```
-cd fabric-samples/test-network
+cd test-network
 export PATH=${PWD}/../bin:$PATH
 export FABRIC_CFG_PATH=$PWD/../config/
 export CORE_PEER_TLS_ENABLED=true
