@@ -217,7 +217,7 @@ password: adminpw
 ```
 Go to mychannel_balance_transfer
 
-Select Account A1 to see the current state of A1
+Select Account A1 to see the current state of A1, U1, acc1 & acc2
 
 
 
