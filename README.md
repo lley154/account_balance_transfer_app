@@ -136,13 +136,15 @@ First you have to enroll the admin user
 node enrollUser.js 'CAAdmin@org1.example.com' admin adminpw
 ```
 
-Then register user as follows
+Now register user as follows
 ```
 node registerUser.js 'CAAdmin@org1.example.com' 'User1@org1.example.com' '{"secret": "userpw"}'
 ```
+Then enroll user
 ```
 node enrollUser.js 'User1@org1.example.com' 'User1@org1.example.com' userpw
 ```
+
 Using User1 credentials create account acc1
 ```
 node submitTransaction.js 'User1@org1.example.com' initAccount acc1 100
