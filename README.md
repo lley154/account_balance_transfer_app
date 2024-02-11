@@ -192,7 +192,7 @@ cat wallet/User1@org1.example.com.id | jq
 ```
 ## Part 3: Viewing World State Data in CouchDB
 
-We can port forward from our local machine to the virutal machine and then access the CouchDB UI.
+We can port forward from our local machine to the virutal machine and then access the CouchDB UI using port 5984.
 
 ssh usage:
 ```
