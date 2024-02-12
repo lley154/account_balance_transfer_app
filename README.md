@@ -136,6 +136,9 @@ peer chaincode query \
 Go into the account balance transfer app directory
 ```
 cd ../account_balance_transfer_app/balance_transfer_app
+```
+Install node node modules
+```
 npm install
 ```
 First you have to enroll the admin user
