@@ -11,7 +11,7 @@ git clone https://github.com/lley154/account_balance_transfer_app.git
 Set environment variables:
 ```
 cd test-network
-./network.sh down
+sudo ./network.sh down
 ```
 ```
 export PATH=${PWD}/../bin:$PATH
@@ -24,7 +24,7 @@ export CORE_PEER_ADDRESS=localhost:7051
 ```
 Start the network channel
 ```
-./network.sh up createChannel -ca -s couchdb
+sudo ./network.sh up createChannel -ca -s couchdb
 ```
 Deploy the chaincode
 ```
