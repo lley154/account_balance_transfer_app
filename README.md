@@ -204,6 +204,9 @@ cat wallet/User1@org1.example.com.id | jq
   "version": 1
 }
 ```
+Note: If your network is restarted, you will need to remove the wallet directory (and regsiter and enroll again) because the public/private keys will no longer match the issuing CA on your network.
+
+
 ## Part 3: Viewing World State Data in CouchDB
 
 We can port forward from our local machine to the virutal machine and then access the CouchDB UI using port 5984.
