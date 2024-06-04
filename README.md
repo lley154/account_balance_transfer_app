@@ -254,8 +254,8 @@ username: admin
 password: adminpw
 ```
 Go to mychannel_balance_transfer
-
-Select Account A1 to see the current state of A1, U1, acc1 & acc2
+Select the Table view to see the acount balances
+Select the JSON view to get detailed account info
 
 
 
