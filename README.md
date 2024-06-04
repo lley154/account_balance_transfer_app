@@ -2,8 +2,14 @@
 Note: You must complete Lab #1 and Lab #2 first which will include the required binary files. 
 ```
 sudo reboot ## restart your vm to free up resources
+```
+```
 sudo apt install jq
+```
+```
 cd fabric-samples
+```
+```
 git clone https://github.com/lley154/account_balance_transfer_app.git
 ```
 
