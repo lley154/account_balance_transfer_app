@@ -20,6 +20,8 @@ git clone https://github.com/lley154/account_balance_transfer_app.git
 Set environment variables:
 ```
 cd test-network
+```
+```
 sudo ./network.sh down
 ```
 ```
@@ -49,6 +51,8 @@ sudo ./network.sh deployCC -ccn balance_transfer -ccv 1.0 -ccp ../account_balanc
 Test to see if you see the mychannel and installed chaincode
 ```
 peer channel list
+```
+```
 peer lifecycle chaincode queryinstalled
 ```
 
@@ -186,12 +190,18 @@ node enrollUser.js 'User2@org1.example.com' 'User2@org1.example.com' userpw2
 Using User 2 create acc2
 ```
 node submitTransaction.js 'User2@org1.example.com' initAccount acc2 200
+```
+```
 node submitTransaction.js 'User2@org1.example.com' listAccounts
 ```
 Now transfer 50 from acc2 to acc1
 ```
 node submitTransaction.js 'User2@org1.example.com' transfer acc2 acc1 50
+```
+```
 node submitTransaction.js 'User2@org1.example.com' listAccounts
+```
+```
 node submitTransaction.js 'User1@org1.example.com' listAccounts
 ```
 Look and confirm there are 3 wallets created and have the certificate and private key for each.
