@@ -187,7 +187,8 @@ node submitTransaction.js 'User1@org1.example.com' listAccounts
 Register and enroll User2
 ```
 node registerUser.js 'CAAdmin@org1.example.com' 'User2@org1.example.com' '{"secret": "userpw2"}'
-
+```
+```
 node enrollUser.js 'User2@org1.example.com' 'User2@org1.example.com' userpw2
 ```
 Using User 2 create acc2
