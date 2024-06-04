@@ -253,9 +253,11 @@ http://localhost:5984/_utils/#login
 username: admin
 password: adminpw
 ```
-Go to mychannel_balance_transfer
-Select the Table view to see the acount balances
-Select the JSON view to get detailed account info
+For the lab report, provide screen shot of the following:
+
+- Go to mychannel_balance_transfer
+- Select the Table view to see the acount balances
+- Select the JSON view to get detailed account info
 
 
 
