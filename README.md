@@ -43,6 +43,9 @@ sudo chmod a+rwx -R organizations  ## this is only done for lab env
 ```
 sudo chmod a+rwx -R ../config  ## this is only done for lab env
 ```
+```
+sudo chmod a+rwx log.txt
+```
 Deploy the chaincode
 ```
 ./network.sh deployCC -ccn balance_transfer -ccv 1.0 -ccp ../account_balance_transfer_app/balance_transfer -ccl javascript
