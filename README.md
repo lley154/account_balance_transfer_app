@@ -139,7 +139,7 @@ List the final balance of U1
 peer chaincode query \
     -C mychannel \
     -n balance_transfer \
-    -c '{"function":"listAccounts", "Args":[]}'
+    -c '{"function":"listAccounts", "Args":[]}' | jq
 ```
 And then the final balance of A1
 ```
@@ -148,7 +148,7 @@ export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/org1.examp
 peer chaincode query \
     -C mychannel \
     -n balance_transfer \
-    -c '{"function":"listAccounts", "Args":[]}'
+    -c '{"function":"listAccounts", "Args":[]}' | jq
 ```
 
 ## Part 2: Using Fabric Application Gateway, Wallets to interact with Chaincode
@@ -182,7 +182,7 @@ node submitTransaction.js 'User1@org1.example.com' initAccount acc1 100
 
 To check the balance
 ```
-node submitTransaction.js 'User1@org1.example.com' listAccounts
+node submitTransaction.js 'User1@org1.example.com' listAccounts | jq
 ```
 Register and enroll User2
 ```
@@ -196,17 +196,17 @@ Using User 2 create acc2
 node submitTransaction.js 'User2@org1.example.com' initAccount acc2 200
 ```
 ```
-node submitTransaction.js 'User2@org1.example.com' listAccounts
+node submitTransaction.js 'User2@org1.example.com' listAccounts | jq
 ```
 Now transfer 50 from acc2 to acc1
 ```
 node submitTransaction.js 'User2@org1.example.com' transfer acc2 acc1 50
 ```
 ```
-node submitTransaction.js 'User2@org1.example.com' listAccounts
+node submitTransaction.js 'User2@org1.example.com' listAccounts | jq
 ```
 ```
-node submitTransaction.js 'User1@org1.example.com' listAccounts
+node submitTransaction.js 'User1@org1.example.com' listAccounts | jq
 ```
 Look and confirm there are 3 wallets created and have the certificate and private key for each.
 ```
