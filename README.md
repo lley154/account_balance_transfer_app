@@ -235,29 +235,7 @@ cat wallet/User1@org1.example.com.id | jq
 Note: If your network is restarted, you will need to remove the wallet directory (and regsiter and enroll again) because the public/private keys will no longer match the issuing CA on your network.
 
 
-## Part 3: Viewing World State Data in CouchDB
 
-We can port forward from our local machine to the virutal machine and then access the CouchDB UI using port 5984.
-
-ssh usage:
-```
-ssh -L local_port:destination_server_ip:remote_port ssh_server_hostname
-```
-An example on how to connect is
-```
-ssh -i lab2.pem -L 5984:ec2-54-91-100-220.compute-1.amazonaws.com:5984 ubuntu@ec2-54-91-100-220.compute-1.amazonaws.com
-```
-Now, we can access the CouchDB UI locally by using the browser and go to:
-```
-http://localhost:5984/_utils/#login
-username: admin
-password: adminpw
-```
-For the lab report, provide screen shot of the following:
-
-- Go to mychannel_balance_transfer
-- Select the Table view to see the acount balances
-- Select the JSON view to get detailed account info
 
 
 
