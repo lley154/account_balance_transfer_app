@@ -182,7 +182,7 @@ node submitTransaction.js 'User1@org1.example.com' initAccount acc1 100
 
 To check the balance
 ```
-node submitTransaction.js 'User1@org1.example.com' listAccounts | jq
+node submitTransaction.js 'User1@org1.example.com' listAccounts
 ```
 Register and enroll User2
 ```
