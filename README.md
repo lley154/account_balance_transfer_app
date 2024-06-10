@@ -44,7 +44,7 @@ sudo chmod a+rwx -R organizations  ## this is only done for lab env
 sudo chmod a+rwx -R ../config  ## this is only done for lab env
 ```
 ```
-sudo chmod a+rwx log.txt
+sudo chmod a+rwx log.txt  ## this is only done for lab env
 ```
 Deploy the chaincode
 ```
