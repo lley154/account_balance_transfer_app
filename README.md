@@ -78,7 +78,7 @@ List the initial balance
 peer chaincode query \
     -C mychannel \
     -n balance_transfer \
-    -c '{"function":"listAccounts", "Args":[]}'
+    -c '{"function":"listAccounts", "Args":[]}' | jq
 ```
 
 Repeat same invoke command with -c '{"function":"setBalance","Args":["A1","150"]}'
