@@ -100,7 +100,7 @@ Now, list the new balance
 peer chaincode query \
     -C mychannel \
     -n balance_transfer \
-    -c '{"function":"listAccounts", "Args":[]}'
+    -c '{"function":"listAccounts", "Args":[]}' | jq
 ```
 Change user to User1:
 ```
