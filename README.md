@@ -35,7 +35,7 @@ export CORE_PEER_ADDRESS=localhost:7051
 ```
 Start the network channel
 ```
-sudo ./network.sh up createChannel -ca -s couchdb
+./network.sh up createChannel -ca -s couchdb
 ```
 ```
 sudo chmod a+rwx -R organizations  ## this is only done for lab env
