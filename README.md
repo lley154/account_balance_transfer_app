@@ -196,17 +196,17 @@ Using User 2 create acc2
 node submitTransaction.js 'User2@org1.example.com' initAccount acc2 200
 ```
 ```
-node submitTransaction.js 'User2@org1.example.com' listAccounts | jq
+node submitTransaction.js 'User2@org1.example.com' listAccounts 
 ```
 Now transfer 50 from acc2 to acc1
 ```
 node submitTransaction.js 'User2@org1.example.com' transfer acc2 acc1 50
 ```
 ```
-node submitTransaction.js 'User2@org1.example.com' listAccounts | jq
+node submitTransaction.js 'User2@org1.example.com' listAccounts 
 ```
 ```
-node submitTransaction.js 'User1@org1.example.com' listAccounts | jq
+node submitTransaction.js 'User1@org1.example.com' listAccounts
 ```
 Look and confirm there are 3 wallets created and have the certificate and private key for each.
 ```
