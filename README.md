@@ -7,6 +7,7 @@ sudo reboot ## restart your vm to free up resources
 sudo dpkg --configure -a
 ```
 ```
+sudo apt update
 sudo apt install jq
 ```
 ```
